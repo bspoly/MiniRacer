@@ -1,0 +1,314 @@
+﻿MINI RACER — version history
+============================
+
+Play: double-click MiniRacer.html (always the latest version). Press F for fullscreen, H for controls.
+Old versions live in the "versions" folder. To go back to one, open it directly,
+or copy it over MiniRacer.html.
+
+
+v28 — 2026-09-25 — versions\v28_2026-09-25_menu-car-fix.html
+--------------------------------------------------------------
+- Menu: the "Your car" picture no longer overlaps the Rivals row (drawn
+  smaller, inside its row) and shows the colour's name next to it.
+
+v27 — 2026-09-25 — versions\v27_2026-09-25_new-ui.html
+--------------------------------------------------------
+UI overhaul:
+- Fills the window at any size, sharp on any screen (wide screens show more
+  track). F = fullscreen. The help line above the game is gone.
+- New menu: settings grouped (Race / Conditions / AI), a track card (map,
+  road/street, direction, length, corners, lap records), a big START button.
+  Everything works with the mouse too (click rows or their arrows).
+- H: controls overlay, from anywhere.
+- Race HUD: timing tower is compact (leader + the cars round you); Tab for
+  the full order; click a row to follow that car when watching. One stack of
+  notices (flags, safety car, final lap, pit messages, lap times) instead of
+  messages all over the screen.
+- Live lap delta vs your best lap (green = up, red = down), gaps to the cars
+  ahead/behind, and a ▲/▼ flash when you gain or lose a place.
+- New speedo: rev lights, gear, speed, tyre ring, damage, surface.
+- Minimap: 3 sizes (N, or click it), position numbers on the leaders and the
+  cars around you.
+- F1-style start: five red lights come on one by one, then GO!
+- Pause menu (P): resume, restart, sound, minimap, timing tower, fullscreen,
+  controls, quit. Keyboard or mouse.
+- Results: podium with the top 3 cars, your grid-to-finish (places gained),
+  times, best lap, stops, wall hits, and a lap-by-lap position chart; buttons
+  for race again / replay / menu. Spectate results get the podium too.
+- Spectate: clickable camera buttons, click any car to follow it, and a
+  driver card (position, gap, best lap, stops, tyres, aggression, mistakes).
+- One consistent look for every panel, button and notice.
+
+v26 — 2026-09-25 — versions\v26_2026-09-25_sc-unlap-fix-closer-pace.html
+--------------------------------------------------------------------------
+- Safety car fix: lapped cars no longer get stuck on it. The safety car now
+  waits for the front of the queue behind it (it used to crawl at ~88 km/h
+  waiting for the leader, who could be stuck behind other cars after
+  pitting). Only cars that really are a lap or more down are waved past, and
+  the safety car moves over to the right while they go by on the left.
+  Green flag when the front of the queue reaches the line.
+- Closer pace: the slowest AI driver is now at most 5% off the fastest, however
+  many cars (Race mode used to drop 1.2% per rival: the last of 59 rivals was
+  at 30% pace and got lapped every lap). Spectate's spread cut from 10% to 5%.
+- Menu: 40+ AI cars turns the number red and shows a flashing
+  "expect total chaos" warning.
+
+v25 — 2026-09-25 — versions\v25_2026-09-25_jeddah-60-cars-free-cam.html
+-------------------------------------------------------------------------
+- New track: Jeddah Corniche, a fast, flowing, walled street circuit
+  (anticlockwise): start straight, T1-T2 chicane, fast esses, a big banked
+  left, flat-out kinks back along the Red Sea, tight final hairpin. Marina in
+  the middle, modern towers with helipads, palms, a giant flagpole plaza.
+  Championships now run 9 rounds.
+- Menu: AI aggression (Low / Normal / High) and AI mistakes (Off / Low /
+  Normal / High). Engine failures happen whatever the mistakes setting.
+- Up to 60 cars (59 rivals + you, or 60 in Spectate), with 40 new drivers.
+  Long fields: the live standings show the top 8 plus a window around the
+  car you're watching; qualifying/results split into columns; the
+  championship screen shows the points finishers / top 20 plus you.
+- Retiring no longer leaves you staring at your wreck: the spectator cameras
+  take over (TV director, follow, whole track, free) for the rest of the race.
+- Spectate: new Free camera (C to cycle, or just use the mouse). Arrows or
+  drag to pan, + / - or the mouse wheel to zoom; it can't leave the map. The
+  minimap shows what you're looking at.
+- Spectate: the TV director no longer cuts to every pit stop.
+- Safety car: once the wreck is cleared, lapped cars (and any car between
+  the safety car and the leader) are waved past to unlap themselves: the
+  queue keeps right, they pass on the left. The safety car only comes in
+  when they're all through.
+
+v24 — 2026-09-25 — versions\v24_2026-09-25_aggressive-ai.html
+---------------------------------------------------------------
+- Aggressive AI: every driver gets an aggression level (some are much more
+  aggressive than others). They follow closer and will bump the car ahead,
+  dive up the inside into corners braking later, move across to defend
+  against a quicker car behind, and squeeze cars alongside. This includes you.
+- AI mistakes, more likely for error-prone drivers, in the wet, on worn
+  tyres, with a damaged car or while attacking: running wide, locking up and
+  going straight on, spinning, and (rarely) losing it at speed and crashing
+  into the barriers, which usually wrecks the car.
+- Engine failures: now and then a car loses power, smokes, pulls off the
+  track and retires (yellow flags; safety car only if it stops on the track).
+- Result: roughly 1 in 3 races (Normal damage) has a retirement, about half
+  of races on High. Contact, moves and running wide are commented on, spaced
+  out so the ticker isn't flooded; the TV director cuts to incidents.
+- Fix: a car cruising round after the flag could set a 0.00 "fastest lap".
+
+v23 — 2026-09-25 — versions\v23_2026-09-25_slipstream-wrecks-safety-car.html
+------------------------------------------------------------------------------
+- Fairer tyre wear: your car's handling drifts sideways far more than the
+  AI's through a normal corner, and all of it used to count as wear (~50%
+  more per lap than the AI). Now a clean lap costs about the same as the AI's;
+  big slides, kerbs and running wide still cost extra.
+- Slipstream: tuck in within ~170px behind another car on the straight for
+  less drag and up to ~7% more top speed (more the closer you are). The AI
+  uses it too. Wind streaks show it; SLIPSTREAM lights up on your speedo.
+- Wrecks: a car that reaches 100% damage stops dead, catches fire and is out
+  of the race (DNF, no points). Marshals clear it after ~12s.
+- Safety car: a wreck brings it out. Everyone lines up single file behind
+  it with no overtaking (your top speed is capped behind the car in front),
+  no slipstream and no blue flags. It stays out at least a lap until the
+  wreck is cleared and the field has bunched up, then pits; green flag when
+  the leader reaches the line.
+- Menu: Damage is now Off / Normal / High (High = 2.5x damage), and a new
+  "Your damage" On/Off switch (Race) protects your car only.
+
+v22 — 2026-09-25 — versions\v22_2026-09-25_bridge-walls.html
+--------------------------------------------------------------
+- 6ix7seven: the bridge parapets are now solid walls, so you can't drive off
+  the side of the bridge, and the whole deck has tarmac grip (it used to take
+  the grip of whatever was on the ground underneath).
+
+v21 — 2026-09-25 — versions\v21_2026-09-25_grandstands-and-fixes.html
+-----------------------------------------------------------------------
+- Grandstands on every circuit (3-8 each): the main stand on the start
+  straight, more on the outside of the biggest corners and along straights.
+  Scenery is built around them. Crowds are animated: they fidget, jump about
+  when cars go past, and a Mexican wave runs along each stand now and then.
+- 6ix7seven: much less runoff.
+- AI pit rule: no AI driver pits with 40% or more tyre left (tyre stops and
+  damage repairs, when tyre wear is on). Strategies are planned around it.
+- Race starts: the AI hold their grid columns while the pack spreads out,
+  and when passing they go round on the side with more room instead of
+  always heading for the middle. Much less bunching off the line.
+- Speedometer reading eased so it no longer flickers.
+
+v20 — 2026-09-25 — versions\v20_2026-09-25_6ix7seven.html
+-----------------------------------------------------------
+- New track: 6ix7seven. The circuit spells "67": start on the 7's top bar,
+  down the 6's curving stem, under the bridge, round the 6's loop, back over
+  the bridge (crossing the stem), along the bottom to the 7's foot and up its
+  diagonal to a sharp corner. Park scenery with basketball courts (some with
+  "67" painted in the centre circle).
+- Bridges: the first track that crosses itself. Cars on the bridge and cars
+  underneath never touch. When the car you're driving/watching goes under the
+  bridge, the bridge fades out until you're through. Replays too.
+- Lap tracking follows each car along the road, so the crossing can't mix up
+  which road you're on; a checkpoint in the loop stops anyone turning off at
+  the crossing to skip it.
+- Championships now run 8 rounds.
+
+v19 — 2026-09-25 — versions\v19_2026-09-25_remove-ghost.html
+--------------------------------------------------------------
+- Remove a friend's ghost: press G on the menu, leave the box empty and press
+  OK. (Paste a code instead to swap it for another; Cancel keeps it.)
+
+v18 — 2026-09-25 — versions\v18_2026-09-25_ghost-codes.html
+-------------------------------------------------------------
+- Ghost codes: race your friends' best laps.
+  Share: in Time Trial press G. Your best-ever time-trial lap on that track
+  is copied as a code (asks your name the first time). Send it to a friend.
+  Load: on the menu press G and paste a code. The game switches to that
+  track in Time Trial; the friend's ghost is a see-through blue car with
+  their name over it. Each lap shows how far ahead/behind their time you
+  were, with confetti when you first beat it.
+  Your best lap per track is saved automatically whenever you set one.
+
+v17 — 2026-09-25 — versions\v17_2026-09-25_changing-weather.html
+------------------------------------------------------------------
+- Changing weather (Weather: Random, races only). The start weather is rolled
+  as before, then each race secretly rolls 0-3 changes at random points:
+  rain can arrive, stop, or pass over as a shower. Nothing is announced until
+  it happens. Rain builds over a few seconds; the track soaks over ~15s and
+  takes ~40s to dry once it stops, so grip changes gradually. Night races can
+  now get rain too. HUD shows Damp / Wet while the track is wet.
+- Rain grip, acceleration, AI pace and spray now scale with how wet the
+  track is (fixed Rain weather behaves the same as before).
+
+v16 — 2026-09-25 — versions\v16_2026-09-25_monte-carlo.html
+-------------------------------------------------------------
+- New track: Monte Carlo, a clockwise street circuit based on Monaco (no
+  tunnel). Walls all the way round. Start straight with the pits on the
+  harbour side, Sainte Devote, up Beau Rivage, Massenet, Casino Square,
+  Mirabeau, the Grand Hotel hairpin (slowest corner in the game), Portier,
+  the open-air seafront curve, Nouvelle Chicane, Tabac, the Swimming Pool
+  esses, Rascasse and Anthony Noghes.
+  Harbour full of superyachts, open sea round the outside, the Casino with
+  its gardens and fountain, hillside apartments with rooftop pools, palms.
+- Championships now run 7 rounds.
+
+v15 — 2026-09-25 — versions\v15_2026-09-25_pit-strategy.html
+--------------------------------------------------------------
+- AI pit strategy: each driver picks its own plan at the start (the fewest
+  stops its tyres allow, or about 1 in 3 go for an extra stop on fresher
+  tyres) and splits its stints unevenly, so some stop early and some go long.
+  Drivers are also harder or gentler on their tyres (+/-15% wear). Stops are
+  now spread over many laps instead of the whole field pitting together.
+- No car-to-car collisions in the pit lane: cars pass through each other once
+  they're past the entry ramp (including in their boxes), so no more pile-ups.
+
+v14 — 2026-09-25 — versions\v14_2026-09-25_vineyard-hills.html
+----------------------------------------------------------------
+- New track: Vineyard Hills, a clockwise Tuscan-style circuit. Top start
+  straight (pits on the inside), fast right sweeper into a long double-apex
+  right, sweeping bottom straight, tight right hairpin into an infield loop,
+  left hairpin through a walled hilltop village, then back along the infield.
+  Rows of vines, terracotta farmhouses, cypresses and olive trees.
+- Championships now run 6 rounds.
+
+v13 — 2026-09-25 — versions\v13_2026-09-25_random-track-weather.html
+-----------------------------------------------------------------------
+- Menu: Track and Weather now have a 'Random' choice. Random track picks one at
+  the start of each race; a championship runs its rounds in a random order.
+  Random weather is rolled for every race weekend (incl. each championship round).
+  The commentary announces what was picked.
+
+
+v12 — 2026-09-25 — versions\v12_2026-09-25_19-rivals.html
+------------------------------------------------------------
+- Race mode now allows up to 19 rivals (a 20-car grid including you), up from 11.
+
+
+v11 — 2026-09-25 — versions\v11_2026-09-25_smooth-replays.html
+----------------------------------------------------------------
+- Fix: replays were jittery (recorded every 2nd frame, each shown twice).
+  Cars and camera now blend smoothly between recorded frames.
+
+
+v10 — 2026-09-25 — versions\v10_2026-09-25_damage-toggle.html
+---------------------------------------------------------------
+- Menu: new "Damage: On/Off" option (Race and Spectate). Tyre wear already
+  had its own Off / Normal / High option.
+
+
+v9 — 2026-09-25 — versions\v9_2026-09-25_engine-sound.html
+-----------------------------------------------------------
+- Engine sound: 5 simulated gears (revs climb and drop at each shift), a
+  sub-octave layer for body, brighter/louder on throttle, quieter off it.
+- Tyre squeal when sliding on tarmac. Spectate plays the watched car, quieter.
+
+
+v8 — 2026-09-25 — versions\v8_2026-09-25_damage.html
+-----------------------------------------------------
+- Car damage (races only): wall hits above ~90 km/h and heavy car-to-car
+  contact damage the car. Damage lowers top speed (up to -18%) and steering
+  (up to -25%); badly damaged cars (30%+) trail smoke. Pit stops repair it,
+  and you can now pit for repairs even with tyre wear off. AI boxes when
+  badly damaged. DMG % shown in your speed panel; commentary announces it.
+
+
+v7 — 2026-09-25 — versions\v7_2026-09-25_maple-ridge.html
+----------------------------------------------------------
+- New track: Maple Ridge, the first CLOCKWISE circuit. Autumn forest with a
+  lake in the middle. Top start straight (pits on the right), right-hand
+  sweeper, downhill esses, tight right hairpin, walled chicane, long
+  right-hander, wiggle up the west side.
+- Championships now run 5 rounds.
+
+
+v6 — 2026-09-25 — versions\v6_2026-09-25_harbour-point.html
+------------------------------------------------------------
+- New track: Harbour Point, a Mediterranean coastal circuit. Seafront start
+  straight with pits, fast left sweeper, walled esses climbing the hillside,
+  hairpin, kink onto the back straight, long left-hander, wiggle down the far
+  side. Infield lagoon with beach and moored boats; palms and olive trees.
+- Championships now run 4 rounds (one per track).
+
+
+v5 — 2026-09-25 — versions\v5_2026-09-25_replays.html
+------------------------------------------------------
+- Replays: every race is recorded; press V on the results screen to watch it back.
+  ←→ follow a car · ↑↓ speed (0.25×–8×) · Space pause · C whole track ·
+  Home restart · V/Esc back to results. Works at night too.
+
+
+v4 — 2026-09-25 — versions\v4_2026-09-25_flags.html
+----------------------------------------------------
+- Yellow flags: a car stranded off track (or reversing out of a wall) brings out
+  waving yellow flags at that spot; cars approaching slow down; banner for you,
+  flashing marker on the minimap, commentary.
+- Blue flags: a car about to be lapped moves over and lifts to let the leader by;
+  banner for you when it's you; commentary.
+
+
+v3 — 2026-09-25 — versions\v3_2026-09-25_qualifying.html
+---------------------------------------------------------
+- Qualifying (menu: Qualifying On/Off, for Race and Spectate, on by default):
+  Race: you drive a 3-lap solo session, best lap counts (Enter ends it early).
+  AI times come from a simulated full-pace lap scaled by each driver's pace.
+  Spectate: qualifying is simulated instantly. Results screen sets the grid.
+  Championships run qualifying before every round.
+
+
+v2 — 2026-09-25 — versions\v2_2026-09-25_championship-and-commentary.html
+--------------------------------------------------------------------------
+- Championship mode (menu: Event = Championship, for Race or Spectate): one round
+  at each of the 3 tracks starting with the selected one, F1 points (25-18-15-12-10-8-6-4-2-1),
+  results + championship table after each round, champion crowned at the end.
+  Enter = next round, Esc = quit. Spectated drivers keep the same pace all season.
+- Commentary ticker (bottom left): overtakes, pit stops, drivers running wide,
+  fastest laps, final lap, winner, big crashes, champion.
+- Fix: standings were briefly wrong at the moment a car crossed the line.
+
+
+v1 — 2026-09-25 — versions\v1_2026-09-25_tyres-and-pit-stops.html
+-------------------------------------------------------------------
+First saved version. Includes:
+- 3 tracks: Green Valley, Downtown (street circuit), Desert Loop
+- Modes: Race (1-11 rivals, Easy/Normal/Hard), Time Trial (endless, ghost car),
+  Spectate (2-20 AI cars; TV director / follow car / whole-track cameras, live gaps)
+- Weather: Sunny, Rain, Night (headlights, street lamps)
+- Surfaces: asphalt, kerbs, grass/dirt, gravel/sand, walls
+- Tyre wear (Off/Normal/High) and pit stops for you and the AI, with AI pit strategy
+- Pit lanes with garages, boxes, pit wall and speed limiter on every track
+- Top-5 lap records per track, countdown lights, sounds, confetti
